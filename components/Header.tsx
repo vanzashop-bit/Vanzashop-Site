@@ -16,16 +16,16 @@ export default function Header() {
         </a>
 
         <nav className="hidden items-center gap-10 text-[15px] font-semibold text-slate-700 lg:flex">
-          <a href="#sobre" className="transition hover:text-blue-600">
+          <a href="#about" className="transition hover:text-blue-600">
             Sobre
           </a>
-          <a href="#servicos" className="transition hover:text-blue-600">
+          <a href="#services" className="transition hover:text-blue-600">
             Serviços
           </a>
           <a href="#marketplaces" className="transition hover:text-blue-600">
             Marketplaces
           </a>
-          <a href="#contato" className="transition hover:text-blue-600">
+          <a href="#contact" className="transition hover:text-blue-600">
             Contato
           </a>
         </nav>

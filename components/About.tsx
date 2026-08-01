@@ -1,20 +1,20 @@
-import { ArrowRight, Bot, Sparkles, Workflow } from "lucide-react";
+import { ArrowRight, Boxes, Sparkles, Workflow } from "lucide-react";
 import SectionTitle from "./SectionTitle";
 
 const pillars = [
   {
-    title: "Gestão de marketplace",
-    description: "Coordinate catalogo, estoque e promoções entre canais com precisão operacional.",
+    title: "Venda de produtos",
+    description: "Uma operação pensada para quem busca encontrar produtos de forma simples, segura e prática.",
+    icon: Boxes,
+  },
+  {
+    title: "Consultoria para empresas",
+    description: "Apoio especializado para marcas e sellers que querem crescer com estratégia e performance.",
     icon: Workflow,
   },
   {
-    title: "Automação",
-    description: "Automações reduzem esforço manual, aceleram respostas e protegem a margem em escala.",
-    icon: Bot,
-  },
-  {
-    title: "Business Intelligence",
-    description: "Relatórios claros transformam dados de performance em ação, desde planejamento até estratégia de crescimento.",
+    title: "Experiência premium",
+    description: "Uma jornada com mais clareza, mais confiança e mais valor para o visitante.",
     icon: Sparkles,
   },
 ];
@@ -26,15 +26,15 @@ export default function About() {
         <div>
           <SectionTitle
             eyebrow="Sobre a VANZASHOP"
-            title="Mais do que uma varejista online. Uma plataforma de crescimento para o comércio moderno."
-            description="Ajudamos marcas a ir além de vendas pontuais e a construir operações de marketplace duradouras, mensuráveis e performáticas."
+            title="Duas áreas de atuação, uma visão de crescimento"
+            description="A VANZASHOP organiza a experiência para dois públicos diferentes: quem quer comprar e quem quer expandir seus negócios em marketplaces."
           />
           <div className="mt-8 space-y-4 rounded-[2rem] border border-slate-200 bg-slate-50 p-8 shadow-sm">
             <p className="text-lg leading-8 text-slate-600">
-              A VANZASHOP une consultoria estratégica, gestão operacional e tecnologia para desbloquear novas receitas nos marketplaces mais competitivos do Brasil.
+              A proposta é simples: priorizar a compra de produtos e, ao mesmo tempo, oferecer uma segunda linha de negócio forte para empresas que buscam consultoria especializada.
             </p>
             <div className="flex items-center gap-2 text-sm font-semibold text-blue-700">
-              Descubra como nossa equipe pode acelerar a próxima etapa do seu crescimento
+              Descubra como a VANZASHOP conecta produtos, operação e crescimento
               <ArrowRight className="h-4 w-4" />
             </div>
           </div>

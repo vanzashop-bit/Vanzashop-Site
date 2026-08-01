@@ -4,33 +4,37 @@ import SectionTitle from "./SectionTitle";
 const marketplaces = [
   {
     name: "Mercado Livre",
-    description: "Otimize ofertas, disponibilidade de estoque e campanhas para o maior marketplace do país.",
-    cta: "Explorar canal",
+    description: "Encontre produtos com praticidade, velocidade e segurança na maior plataforma de comércio do Brasil.",
+    cta: "Comprar",
+    href: "https://www.mercadolivre.com.br/pagina/vanzashop",
   },
   {
     name: "Shopee",
-    description: "Aumente a conversão com campanhas mais bem estruturadas e merchandising mais eficiente.",
-    cta: "Explorar canal",
+    description: "Descubra itens selecionados com uma experiência de compra simples e acessível.",
+    cta: "Comprar",
+    href: "https://shopee.com.br/vanzashop?categoryId=100636&entryPoint=ShopByPDP&itemId=58251526226",
   },
   {
     name: "Amazon",
-    description: "Fortaleça performance de listagem, conteúdo e excelência operacional em escala.",
-    cta: "Explorar canal",
+    description: "Acompanhe a abertura de novas oportunidades em um canal de alcance ainda maior.",
+    cta: "Em breve",
+    href: "#",
   },
   {
     name: "Magalu",
-    description: "Apoie crescimento de alta velocidade com catálogo forte e agilidade comercial.",
-    cta: "Explorar canal",
+    description: "Explore novos produtos e categorias em uma operação em expansão.",
+    cta: "Em breve",
+    href: "#",
   },
 ];
 
 export default function Marketplace() {
   return (
-    <section id="marketplaces" className="mx-auto max-w-7xl px-4 py-24 sm:px-6 lg:px-8">
+    <section id="marketplaces" className="mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8">
       <SectionTitle
-        eyebrow="Marketplaces de confiança"
-        title="Suporte operacional para os canais que realmente importam."
-        description="Construímos prontidão para cada plataforma para que o crescimento seja controlado, mensurável e premium."
+        eyebrow="Onde comprar"
+        title="Acesse a VANZASHOP pelos principais marketplaces"
+        description="A experiência de compra foi reorganizada para mostrar claramente onde o cliente pode encontrar produtos com confiança."
       />
 
       <div className="mt-12 grid gap-6 md:grid-cols-2 xl:grid-cols-4">
@@ -41,10 +45,15 @@ export default function Marketplace() {
             </div>
             <h3 className="mt-5 text-xl font-semibold text-slate-950">{marketplace.name}</h3>
             <p className="mt-3 text-sm leading-7 text-slate-600">{marketplace.description}</p>
-            <button className="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-blue-700">
+            <a
+              href={marketplace.href}
+              target={marketplace.href.startsWith("http") ? "_blank" : undefined}
+              rel={marketplace.href.startsWith("http") ? "noopener noreferrer" : undefined}
+              className="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-blue-700"
+            >
               {marketplace.cta}
               <ArrowRight className="h-4 w-4" />
-            </button>
+            </a>
           </div>
         ))}
       </div>

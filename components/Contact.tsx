@@ -14,7 +14,7 @@ const contactItems = [
   },
   {
     icon: MapPin,
-    label: "Location",
+    label: "Localização",
     value: "Caxias do Sul - RS",
   },
 ];
@@ -24,19 +24,19 @@ export default function Contact() {
     <section id="contact" className="mx-auto max-w-7xl px-4 py-24 sm:px-6 lg:px-8">
       <div className="grid gap-8 rounded-[2.5rem] border border-slate-200 bg-gradient-to-br from-slate-950 to-blue-950 p-8 text-white shadow-[0_30px_80px_rgba(15,23,42,0.2)] sm:p-12 lg:grid-cols-[1.05fr_0.95fr] lg:items-center">
         <div>
-          <p className="text-sm font-semibold uppercase tracking-[0.2em] text-blue-200">Contact</p>
+          <p className="text-sm font-semibold uppercase tracking-[0.2em] text-blue-200">Contato</p>
           <h2 className="mt-4 text-3xl font-semibold tracking-tight sm:text-4xl">
-            Pronto para construir uma operação de marketplace mais sólida?
+            Quer comprar produtos ou contratar consultoria?
           </h2>
           <p className="mt-5 max-w-2xl text-lg leading-8 text-slate-300">
-            Vamos conversar sobre como a VANZASHOP pode apoiar o seu crescimento com consultoria estratégica, automação e excelência operacional.
+            Separamos a comunicação para que cada visitante encontre o caminho certo: comprar online ou conversar com a equipe especializada.
           </p>
           <div className="mt-8 flex flex-wrap gap-3">
-            <Button href="https://wa.me/5554999981574" className="bg-white text-slate-950 hover:bg-slate-100">
-              Iniciar conversa
+            <Button href="https://www.mercadolivre.com.br/pagina/vanzashop" className="bg-white text-slate-950 hover:bg-slate-100">
+              Quero comprar
             </Button>
-            <Button href="mailto:vanzashop@vanzashop.com.br" variant="secondary" className="border-white/20 bg-white/10 text-white hover:bg-white/20">
-              Enviar e-mail
+            <Button href="https://wa.me/5554999981574" variant="secondary" className="border-white/20 bg-white/10 text-white hover:bg-white/20">
+              Quero contratar consultoria
             </Button>
           </div>
         </div>
@@ -47,7 +47,7 @@ export default function Contact() {
               <MessageCircle className="h-6 w-6" />
             </div>
             <div>
-              <p className="text-sm text-slate-300">Entre em contato</p>
+              <p className="text-sm text-slate-300">Atendimento</p>
               <p className="text-xl font-semibold">vanzashop@vanzashop.com.br</p>
             </div>
           </div>

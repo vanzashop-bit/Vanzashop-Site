@@ -39,8 +39,8 @@ export default function Services() {
     <section id="services" className="mx-auto max-w-7xl px-4 py-24 sm:px-6 lg:px-8">
       <SectionTitle
         eyebrow="Serviços"
-        title="Um parceiro operacional completo para crescer em marketplace."
-        description="Da estratégia à execução, cada serviço é pensado para acelerar a performance sem abrir mão da qualidade."
+        title="Uma estrutura operacional completa para crescer com excelência."
+        description="Do planejamento à execução, cada serviço é pensado para elevar a performance sem abrir mão de qualidade, controle e escala."
       />
 
       <div className="mt-12 grid gap-6 md:grid-cols-2 xl:grid-cols-3">

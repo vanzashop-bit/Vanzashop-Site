@@ -1,11 +1,23 @@
 import Link from "next/link";
 import { Globe, MessageCircleMore, Send, Sparkles } from "lucide-react";
 
-const footerLinks = [
-  { label: "Sobre", href: "#about" },
-  { label: "Serviços", href: "#services" },
-  { label: "Marketplaces", href: "#marketplaces" },
-  { label: "Contato", href: "#contact" },
+const footerSections = [
+  {
+    title: "Produtos",
+    links: [
+      { label: "Mercado Livre", href: "https://www.mercadolivre.com.br/pagina/vanzashop" },
+      { label: "Shopee", href: "https://shopee.com.br/vanzashop?categoryId=100636&entryPoint=ShopByPDP&itemId=58251526226" },
+      { label: "Categorias", href: "#marketplaces" },
+    ],
+  },
+  {
+    title: "Consultoria",
+    links: [
+      { label: "Sobre", href: "#about" },
+      { label: "Consultoria", href: "#consultoria" },
+      { label: "Contato", href: "#contact" },
+    ],
+  },
 ];
 
 const socialLinks = [
@@ -22,39 +34,25 @@ export default function Footer() {
         <div>
           <p className="text-2xl font-semibold tracking-tight text-white">VANZASHOP</p>
           <p className="mt-4 max-w-md text-sm leading-7 text-slate-400">
-            Operações premium de marketplace para marcas que querem crescer mais rápido, executar com mais força e ter melhor visibilidade.
+            Venda de produtos e consultoria especializada para empresas que desejam crescer em marketplaces com mais eficiência.
           </p>
         </div>
 
-        <div>
-          <h3 className="text-sm font-semibold uppercase tracking-[0.2em] text-slate-400">Navegação</h3>
-          <ul className="mt-4 space-y-3 text-sm">
-            {footerLinks.map((link) => (
-              <li key={link.href}>
-                <Link href={link.href} className="transition hover:text-white">
-                  {link.label}
-                </Link>
-              </li>
-            ))}
-          </ul>
-        </div>
-
-        <div>
-          <h3 className="text-sm font-semibold uppercase tracking-[0.2em] text-slate-400">Redes</h3>
-          <div className="mt-4 flex flex-wrap gap-3">
-            {socialLinks.map((social) => {
-              const Icon = social.icon;
-              return (
-                <Link
-                  key={social.label}
-                  href={social.href}
-                  className="flex h-10 w-10 items-center justify-center rounded-full border border-slate-700 text-slate-300 transition hover:border-blue-500 hover:text-white"
-                >
-                  <Icon className="h-4 w-4" />
-                </Link>
-              );
-            })}
-          </div>
+        <div className="grid gap-8 sm:grid-cols-2 lg:col-span-2">
+          {footerSections.map((section) => (
+            <div key={section.title}>
+              <h3 className="text-sm font-semibold uppercase tracking-[0.2em] text-slate-400">{section.title}</h3>
+              <ul className="mt-4 space-y-3 text-sm">
+                {section.links.map((link) => (
+                  <li key={link.href}>
+                    <Link href={link.href} className="transition hover:text-white">
+                      {link.label}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
         </div>
       </div>
 
