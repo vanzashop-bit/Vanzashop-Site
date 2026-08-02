@@ -1,64 +1,108 @@
-"use client";
+import {
+  BadgeCheck,
+  ShoppingBag,
+  ShieldCheck,
+  Truck,
+} from "lucide-react";
 
-import { useEffect, useState } from "react";
-
-const stats = [
-  { value: 300, suffix: "k+", label: "Clientes" },
-  { value: 7000, suffix: "+", label: "Pedidos mensais" },
-  { value: 98, suffix: "%", label: "Satisfação do cliente" },
-  { value: 4, suffix: "", label: "Marketplaces" },
+const items = [
+  {
+    title: "4 Marketplaces",
+    description:
+      "Escolha a plataforma de compra que você preferir.",
+    icon: ShoppingBag,
+  },
+  {
+    title: "Compra Segura",
+    description:
+      "Pagamentos protegidos e toda a segurança oferecida pelos marketplaces.",
+    icon: ShieldCheck,
+  },
+  {
+    title: "Entrega Nacional",
+    description:
+      "Produtos enviados para todo o Brasil através da logística dos nossos parceiros.",
+    icon: Truck,
+  },
+  {
+    title: "Compromisso VANZASHOP",
+    description:
+      "Selecionamos produtos com foco em qualidade, confiança e excelente experiência de compra.",
+    icon: BadgeCheck,
+  },
 ];
-
-function useCountUp(target: number, duration = 1400) {
-  const [value, setValue] = useState(0);
-
-  useEffect(() => {
-    let animationFrame = 0;
-    const startTime = performance.now();
-
-    const step = (currentTime: number) => {
-      const progress = Math.min((currentTime - startTime) / duration, 1);
-      const eased = 1 - Math.pow(1 - progress, 3);
-      setValue(Math.round(target * eased));
-
-      if (progress < 1) {
-        animationFrame = window.requestAnimationFrame(step);
-      }
-    };
-
-    animationFrame = window.requestAnimationFrame(step);
-
-    return () => window.cancelAnimationFrame(animationFrame);
-  }, [target, duration]);
-
-  return value;
-}
-
-function StatCard({ stat }: { stat: (typeof stats)[number] }) {
-  const count = useCountUp(stat.value);
-
-  return (
-    <div className="rounded-[1.5rem] border border-white/10 bg-white/10 p-6 backdrop-blur">
-      <p className="text-4xl font-semibold tracking-tight sm:text-5xl">
-        {stat.value >= 1000 ? `${Math.round(count / 1000)}k+` : `${count}${stat.suffix}`}
-      </p>
-      <p className="mt-3 text-sm font-medium uppercase tracking-[0.2em] text-slate-300">
-        {stat.label}
-      </p>
-    </div>
-  );
-}
 
 export default function Stats() {
   return (
     <section className="mx-auto max-w-7xl px-4 py-24 sm:px-6 lg:px-8">
-      <div className="rounded-[2.5rem] border border-slate-200 bg-gradient-to-br from-slate-950 via-blue-950 to-slate-900 p-8 text-white shadow-[0_30px_80px_rgba(15,23,42,0.18)] sm:p-12">
-        <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-4">
-          {stats.map((stat) => (
-            <StatCard key={stat.label} stat={stat} />
-          ))}
+
+      <div className="overflow-hidden rounded-[2.5rem] bg-gradient-to-br from-black via-slate-900 to-slate-950 p-10 text-white shadow-2xl sm:p-14">
+
+        <div className="mx-auto max-w-3xl text-center">
+
+          <span className="rounded-full border border-orange-500/30 bg-orange-500/10 px-4 py-2 text-xs font-bold uppercase tracking-[0.25em] text-orange-300">
+
+            NOSSO COMPROMISSO
+
+          </span>
+
+          <h2 className="mt-6 text-4xl font-black">
+
+            Mais segurança e praticidade para suas compras.
+
+          </h2>
+
+          <p className="mt-6 text-lg leading-8 text-slate-300">
+
+            Trabalhamos para oferecer uma experiência de compra confiável,
+            utilizando os principais marketplaces do Brasil e um catálogo
+            cuidadosamente selecionado.
+
+          </p>
+
         </div>
+
+        <div className="mt-14 grid gap-6 md:grid-cols-2 xl:grid-cols-4">
+
+          {items.map((item) => {
+
+            const Icon = item.icon;
+
+            return (
+
+              <div
+                key={item.title}
+                className="rounded-[1.75rem] border border-white/10 bg-white/5 p-8 backdrop-blur transition hover:-translate-y-2 hover:border-orange-500/20"
+              >
+
+                <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-orange-500/15 text-orange-400">
+
+                  <Icon className="h-7 w-7" />
+
+                </div>
+
+                <h3 className="mt-6 text-xl font-bold">
+
+                  {item.title}
+
+                </h3>
+
+                <p className="mt-4 leading-7 text-slate-300">
+
+                  {item.description}
+
+                </p>
+
+              </div>
+
+            );
+
+          })}
+
+        </div>
+
       </div>
+
     </section>
   );
 }
