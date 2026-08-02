@@ -1,57 +1,136 @@
-import { ArrowRight, BarChart3, Building2, Compass, Cpu, PackageCheck, ShoppingCart } from "lucide-react";
-import SectionTitle from "./SectionTitle";
+import {
+  ArrowRight,
+  PackageCheck,
+  ShieldCheck,
+  Truck,
+  RefreshCcw,
+  ShoppingBag,
+  Star,
+} from "lucide-react";
 
-const consultoriaItems = [
-  { title: "Consultoria", description: "Estratégias de crescimento e posicionamento para marketplaces.", icon: Compass },
-  { title: "Gestão", description: "Organização comercial, operação e performance de canal.", icon: Building2 },
-  { title: "Automação", description: "Fluxos mais rápidos e menos erros operacionais.", icon: Cpu },
-  { title: "ERP Tiny", description: "Integrações para gestão e controle dos processos.", icon: PackageCheck },
-  { title: "Mercado Livre", description: "Estrutura comercial e operacional para cada categoria.", icon: ShoppingCart },
-  { title: "Shopee", description: "Expansão com foco em performance e crescimento.", icon: BarChart3 },
+const commitments = [
+  {
+    title: "Produtos Selecionados",
+    description:
+      "Trabalhamos com um catálogo cuidadosamente escolhido para oferecer qualidade, durabilidade e excelente custo-benefício.",
+    icon: PackageCheck,
+  },
+  {
+    title: "Compra Segura",
+    description:
+      "Todas as compras são realizadas pelos principais marketplaces do Brasil, garantindo segurança e confiabilidade.",
+    icon: ShieldCheck,
+  },
+  {
+    title: "Entrega Nacional",
+    description:
+      "Receba seus produtos em qualquer região do Brasil através da estrutura logística dos marketplaces parceiros.",
+    icon: Truck,
+  },
+  {
+    title: "Catálogo em Constante Evolução",
+    description:
+      "Novos produtos e categorias são adicionados regularmente para atender diferentes necessidades.",
+    icon: RefreshCcw,
+  },
+  {
+    title: "Praticidade na Compra",
+    description:
+      "Escolha seu marketplace preferido e finalize sua compra de forma simples, rápida e segura.",
+    icon: ShoppingBag,
+  },
+  {
+    title: "Compromisso com a Qualidade",
+    description:
+      "Nosso objetivo é oferecer uma experiência de compra confiável do início ao fim.",
+    icon: Star,
+  },
 ];
 
 export default function Consultoria() {
   return (
-    <section id="consultoria" className="mx-auto max-w-7xl px-4 py-24 sm:px-6 lg:px-8">
-      <div className="overflow-hidden rounded-[2.5rem] border border-slate-200 bg-gradient-to-br from-slate-950 via-slate-900 to-blue-950 p-8 text-white shadow-[0_30px_80px_rgba(15,23,42,0.18)] sm:p-12 lg:p-16">
+    <section
+      id="commitment"
+      className="mx-auto max-w-7xl px-4 py-24 sm:px-6 lg:px-8"
+    >
+      <div className="overflow-hidden rounded-[2.5rem] bg-gradient-to-br from-black via-slate-900 to-slate-950 p-10 text-white shadow-2xl sm:p-14">
+
         <div className="max-w-3xl">
-          <p className="inline-flex rounded-full border border-white/15 bg-white/10 px-3 py-1 text-sm font-semibold uppercase tracking-[0.2em] text-blue-100">
-            Consultoria para empresas
-          </p>
-          <h2 className="mt-6 text-3xl font-semibold tracking-tight sm:text-4xl">
-            Sua empresa vende em marketplaces?
+
+          <span className="rounded-full border border-orange-500/30 bg-orange-500/10 px-4 py-2 text-xs font-bold uppercase tracking-[0.25em] text-orange-300">
+
+            NOSSO COMPROMISSO
+
+          </span>
+
+          <h2 className="mt-6 text-4xl font-black leading-tight">
+
+            Mais do que vender produtos, queremos oferecer uma excelente experiência de compra.
+
           </h2>
-          <p className="mt-5 text-lg leading-8 text-slate-300">
-            Também ajudamos empresas a crescerem com consultoria especializada, automação, integração com ERP, gestão de marketplaces e estratégias de vendas.
+
+          <p className="mt-6 text-lg leading-8 text-slate-300">
+
+            Trabalhamos para que cada compra seja simples, segura e confiável,
+            reunindo produtos de qualidade nos principais marketplaces do Brasil.
+
           </p>
+
         </div>
 
-        <div className="mt-12 grid gap-4 md:grid-cols-2 xl:grid-cols-3">
-          {consultoriaItems.map((item) => {
+        <div className="mt-14 grid gap-6 md:grid-cols-2 xl:grid-cols-3">
+
+          {commitments.map((item) => {
+
             const Icon = item.icon;
+
             return (
-              <div key={item.title} className="rounded-[1.5rem] border border-white/10 bg-white/10 p-6 backdrop-blur">
-                <div className="flex h-11 w-11 items-center justify-center rounded-2xl bg-white/10 text-blue-100">
-                  <Icon className="h-5 w-5" />
+
+              <div
+                key={item.title}
+                className="rounded-[1.75rem] border border-white/10 bg-white/5 p-8 backdrop-blur transition-all duration-300 hover:-translate-y-2 hover:border-orange-500/20 hover:bg-white/10"
+              >
+
+                <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-orange-500/15 text-orange-400">
+
+                  <Icon className="h-7 w-7" />
+
                 </div>
-                <h3 className="mt-4 text-lg font-semibold">{item.title}</h3>
-                <p className="mt-2 text-sm leading-7 text-slate-300">{item.description}</p>
+
+                <h3 className="mt-6 text-xl font-bold">
+
+                  {item.title}
+
+                </h3>
+
+                <p className="mt-4 leading-7 text-slate-300">
+
+                  {item.description}
+
+                </p>
+
               </div>
+
             );
+
           })}
+
         </div>
 
-        <div className="mt-10 flex flex-wrap gap-4">
+        <div className="mt-14">
+
           <a
-            href="https://wa.me/5554999981574"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 rounded-full bg-white px-6 py-3 font-semibold text-slate-950 transition hover:bg-slate-100"
+            href="#marketplaces"
+            className="inline-flex items-center gap-2 rounded-xl bg-orange-500 px-7 py-4 font-semibold text-white transition hover:bg-orange-600"
           >
-            Solicitar consultoria
+            Conheça nossos marketplaces
+
             <ArrowRight className="h-4 w-4" />
+
           </a>
+
         </div>
+
       </div>
     </section>
   );
