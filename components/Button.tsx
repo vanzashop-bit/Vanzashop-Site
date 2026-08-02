@@ -4,30 +4,66 @@ import type { ReactNode } from "react";
 type ButtonProps = {
   href: string;
   children: ReactNode;
-  variant?: "primary" | "secondary" | "ghost";
+  variant?: "primary" | "secondary" | "outline";
+  size?: "sm" | "md" | "lg";
   className?: string;
+  leftIcon?: ReactNode;
+  rightIcon?: ReactNode;
+  external?: boolean;
 };
 
 export default function Button({
   href,
   children,
   variant = "primary",
+  size = "md",
   className = "",
+  leftIcon,
+  rightIcon,
+  external = false,
 }: ButtonProps) {
-  const baseStyles =
-    "inline-flex items-center justify-center rounded-full px-5 py-3 text-sm font-semibold transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500/40";
+  const base =
+    "inline-flex items-center justify-center gap-2 rounded-xl font-semibold transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-orange-400";
+
+  const sizes = {
+    sm: "px-4 py-2 text-sm",
+    md: "px-6 py-3 text-sm",
+    lg: "px-8 py-4 text-base",
+  };
 
   const variants = {
     primary:
-      "bg-blue-600 text-white shadow-[0_12px_40px_rgba(37,99,235,0.25)] hover:-translate-y-0.5 hover:bg-blue-700",
+      "bg-gradient-to-r from-orange-500 to-orange-600 text-white shadow-lg hover:-translate-y-1 hover:shadow-xl",
+
     secondary:
-      "border border-slate-200 bg-white text-slate-800 hover:border-blue-200 hover:text-blue-700",
-    ghost: "bg-transparent text-slate-700 hover:bg-slate-100",
+      "bg-slate-900 text-white hover:bg-black hover:-translate-y-1",
+
+    outline:
+      "border border-slate-300 bg-white text-slate-800 hover:border-orange-500 hover:text-orange-600 hover:-translate-y-1",
   };
 
+  const classes = `${base} ${sizes[size]} ${variants[variant]} ${className}`;
+
+  if (external) {
+    return (
+      <a
+        href={href}
+        target="_blank"
+        rel="noopener noreferrer"
+        className={classes}
+      >
+        {leftIcon}
+        <span>{children}</span>
+        {rightIcon}
+      </a>
+    );
+  }
+
   return (
-    <Link href={href} className={`${baseStyles} ${variants[variant]} ${className}`}>
-      {children}
+    <Link href={href} className={classes}>
+      {leftIcon}
+      <span>{children}</span>
+      {rightIcon}
     </Link>
   );
 }
