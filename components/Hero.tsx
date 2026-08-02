@@ -1,89 +1,164 @@
-import { BadgeCheck, ShieldCheck, Truck } from "lucide-react";
+import {
+  BadgeCheck,
+  ShieldCheck,
+  Truck,
+  ArrowRight,
+} from "lucide-react";
 
 const features = [
-  { title: "Compra segura", icon: ShieldCheck },
-  { title: "Entrega para todo o Brasil", icon: Truck },
-  { title: "Atendimento especializado", icon: BadgeCheck },
+  {
+    title: "Compra 100% Segura",
+    icon: ShieldCheck,
+  },
+  {
+    title: "Entrega para todo o Brasil",
+    icon: Truck,
+  },
+  {
+    title: "Lojas Oficiais",
+    icon: BadgeCheck,
+  },
+];
+
+const marketplaces = [
+  "Mercado Livre",
+  "Shopee",
+  "Amazon",
+  "Magazine Luiza",
 ];
 
 export default function Hero() {
   return (
-    <section className="relative overflow-hidden bg-gradient-to-br from-blue-50 via-white to-orange-50">
-      <div className="absolute -left-32 top-20 h-96 w-96 rounded-full bg-blue-300/20 blur-3xl" />
-      <div className="absolute -right-32 bottom-0 h-96 w-96 rounded-full bg-orange-300/20 blur-3xl" />
+    <section className="relative overflow-hidden bg-gradient-to-br from-white via-slate-50 to-orange-50">
 
-      <div className="mx-auto grid min-h-[90vh] max-w-7xl items-center gap-12 px-4 py-24 sm:px-6 lg:grid-cols-[1.1fr_0.9fr] lg:px-8 lg:py-28">
+      <div className="absolute -left-40 top-10 h-[500px] w-[500px] rounded-full bg-orange-300/10 blur-3xl" />
+
+      <div className="absolute -right-40 bottom-0 h-[500px] w-[500px] rounded-full bg-orange-400/10 blur-3xl" />
+
+      <div className="mx-auto grid min-h-[90vh] max-w-7xl items-center gap-16 px-4 py-24 sm:px-6 lg:grid-cols-[1.1fr_0.9fr] lg:px-8">
+
+        {/* Texto */}
+
         <div>
-          <span className="inline-flex rounded-full bg-blue-100 px-5 py-2 text-sm font-semibold text-blue-700">
-            Produtos • Marketplace • Compra online
+
+          <span className="inline-flex rounded-full border border-orange-200 bg-orange-50 px-5 py-2 text-sm font-semibold text-orange-600">
+
+            Produtos • Casa • Ferramentas • Construção
+
           </span>
 
-          <h1 className="mt-8 text-4xl font-black leading-tight text-slate-950 sm:text-5xl lg:text-6xl">
-            Encontre os melhores produtos para sua casa, construção e reformas.
+          <h1 className="mt-8 text-5xl font-black leading-tight text-slate-950 lg:text-7xl">
+
+            Tudo o que você precisa para sua casa e obra.
+
           </h1>
 
-          <p className="mt-8 max-w-2xl text-lg leading-8 text-slate-600 sm:text-xl">
-            Comprar com segurança através dos maiores marketplaces do Brasil, com atendimento especializado e uma operação pensada para quem busca praticidade.
+          <p className="mt-8 max-w-2xl text-xl leading-9 text-slate-600">
+
+            Encontre produtos de qualidade e compre com segurança através dos
+            maiores marketplaces do Brasil.
+
           </p>
 
-          <div className="mt-10 flex flex-wrap gap-4">
+          <div className="mt-12 flex flex-wrap gap-4">
+
             <a
-              href="https://www.mercadolivre.com.br/pagina/vanzashop"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="rounded-full bg-blue-600 px-7 py-3.5 font-semibold text-white transition hover:bg-blue-700"
+              href="#marketplaces"
+              className="inline-flex items-center gap-2 rounded-xl bg-gradient-to-r from-orange-500 to-orange-600 px-8 py-4 font-semibold text-white shadow-lg transition hover:-translate-y-1 hover:shadow-xl"
             >
-              Comprar no Mercado Livre
+              Onde Comprar
+
+              <ArrowRight className="h-4 w-4" />
+
             </a>
-            <a
-              href="https://shopee.com.br/vanzashop?categoryId=100636&entryPoint=ShopByPDP&itemId=58251526226"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="rounded-full border border-slate-300 bg-white px-7 py-3.5 font-semibold text-slate-700 transition hover:bg-slate-100"
-            >
-              Comprar na Shopee
-            </a>
+
           </div>
 
-          <div className="mt-8 flex flex-wrap gap-3">
+          <div className="mt-10 flex flex-wrap gap-3">
+
             {features.map((feature) => {
+
               const Icon = feature.icon;
+
               return (
-                <div key={feature.title} className="inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white/80 px-4 py-2 text-sm font-medium text-slate-700 shadow-sm">
-                  <Icon className="h-4 w-4 text-blue-600" />
-                  {feature.title}
+
+                <div
+                  key={feature.title}
+                  className="inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white px-5 py-3 shadow-sm"
+                >
+
+                  <Icon className="h-4 w-4 text-orange-500" />
+
+                  <span className="text-sm font-medium text-slate-700">
+
+                    {feature.title}
+
+                  </span>
+
                 </div>
+
               );
+
             })}
+
           </div>
+
         </div>
 
-        <div className="rounded-[2rem] border border-slate-200 bg-white p-8 shadow-[0_25px_70px_rgba(15,23,42,0.08)]">
-          <div className="flex items-center justify-between">
-            <div>
-              <p className="text-sm font-semibold uppercase tracking-[0.2em] text-slate-500">Loja e operação</p>
-              <h2 className="mt-2 text-2xl font-semibold text-slate-950">Disponível nos principais marketplaces</h2>
-            </div>
-            <div className="rounded-full bg-blue-50 px-3 py-1 text-sm font-semibold text-blue-700">Vanzashop</div>
-          </div>
+        {/* Card */}
 
-          <div className="mt-8 space-y-4">
-            {[
-              { name: "Mercado Livre", status: "Disponível agora" },
-              { name: "Shopee", status: "Disponível agora" },
-              { name: "Amazon", status: "Em breve" },
-              { name: "Magalu", status: "Em breve" },
-            ].map((item) => (
-              <div key={item.name} className="flex items-center justify-between rounded-2xl border border-slate-200 bg-slate-50 px-4 py-4">
-                <span className="font-medium text-slate-900">{item.name}</span>
-                <span className={`text-sm font-semibold ${item.status === "Disponível agora" ? "text-emerald-600" : "text-slate-500"}`}>
-                  {item.status}
+        <div className="rounded-[2rem] border border-slate-200 bg-white p-10 shadow-2xl">
+
+          <span className="rounded-full bg-orange-100 px-4 py-2 text-sm font-bold text-orange-600">
+
+            COMPRE ONDE PREFERIR
+
+          </span>
+
+          <h2 className="mt-6 text-3xl font-bold text-slate-900">
+
+            Estamos presentes nos maiores marketplaces do Brasil.
+
+          </h2>
+
+          <p className="mt-5 leading-8 text-slate-600">
+
+            Escolha sua plataforma favorita e tenha toda a segurança, praticidade
+            e confiabilidade que você já conhece.
+
+          </p>
+
+          <div className="mt-10 space-y-4">
+
+            {marketplaces.map((marketplace) => (
+
+              <div
+                key={marketplace}
+                className="flex items-center justify-between rounded-2xl border border-slate-200 bg-slate-50 px-5 py-4"
+              >
+
+                <span className="font-semibold text-slate-900">
+
+                  {marketplace}
+
                 </span>
+
+                <span className="rounded-full bg-emerald-100 px-3 py-1 text-sm font-semibold text-emerald-700">
+
+                  Disponível
+
+                </span>
+
               </div>
+
             ))}
+
           </div>
+
         </div>
+
       </div>
+
     </section>
   );
 }
