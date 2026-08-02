@@ -1,71 +1,133 @@
-import { ArrowRight, Clock3, ShieldCheck, Sparkles, TrendingUp } from "lucide-react";
+import {
+  ArrowRight,
+  BadgeCheck,
+  PackageCheck,
+  ShieldCheck,
+  Truck,
+} from "lucide-react";
+
 import SectionTitle from "./SectionTitle";
 
 const reasons = [
   {
-    title: "Tecnologia que escala",
-    description: "Operamos com fluxos robustos, automação, integrações claras e camadas premium de operação.",
-    icon: Sparkles,
-  },
-  {
-    title: "Suporte humano",
-    description: "Uma equipe dedicada acompanha seus objetivos com comunicação ágil e execução prática.",
+    title: "Compra Protegida",
+    description:
+      "Todas as compras são realizadas através dos maiores marketplaces do Brasil, oferecendo mais segurança e tranquilidade.",
     icon: ShieldCheck,
   },
   {
-    title: "Execução rápida",
-    description: "Cada entrega é pensada para avançar com velocidade sem abrir mão de qualidade ou confiabilidade.",
-    icon: Clock3,
+    title: "Produtos Selecionados",
+    description:
+      "Nosso catálogo é composto por produtos escolhidos com foco em qualidade, durabilidade e excelente custo-benefício.",
+    icon: PackageCheck,
   },
   {
-    title: "Operações orientadas a crescimento",
-    description: "Do cuidado com catálogo à expansão de canal, projetamos para manter impulso e proteger a margem.",
-    icon: TrendingUp,
+    title: "Entrega para Todo o Brasil",
+    description:
+      "Conte com a logística dos marketplaces parceiros para receber seus pedidos em qualquer região do país.",
+    icon: Truck,
+  },
+  {
+    title: "Compromisso com Você",
+    description:
+      "Trabalhamos para oferecer uma experiência de compra simples, segura e confiável do início ao fim.",
+    icon: BadgeCheck,
   },
 ];
 
 export default function WhyChooseUs() {
   return (
     <section className="mx-auto max-w-7xl px-4 py-24 sm:px-6 lg:px-8">
+
       <SectionTitle
-        eyebrow="Por que escolher a VANZASHOP"
-        title="Pensado para marcas ambiciosas que precisam de precisão, velocidade e clareza."
-        description="Unimos estratégia e execução operacional para que seu negócio em marketplace cresça sem atrito."
+        eyebrow="POR QUE ESCOLHER A VANZASHOP"
+        title="Uma experiência de compra pensada para oferecer confiança e praticidade."
+        description="Mais do que vender produtos, queremos proporcionar uma jornada de compra segura, rápida e transparente através dos principais marketplaces do Brasil."
         center
       />
 
-      <div className="mt-12 grid gap-6 lg:grid-cols-[0.9fr_1.1fr] lg:items-start">
-        <div className="rounded-[2rem] border border-slate-200 bg-gradient-to-br from-blue-600 to-indigo-700 p-8 text-white shadow-[0_24px_60px_rgba(37,99,235,0.2)]">
-          <div className="inline-flex rounded-full bg-white/15 px-3 py-1 text-sm font-medium">
-            Modelo operacional premium
-          </div>
-          <h3 className="mt-6 text-3xl font-semibold tracking-tight">
-            Um sistema que ajuda clientes a comprar, equipes a entregar e liderança a enxergar o cenário completo.
+      <div className="mt-16 grid gap-8 lg:grid-cols-[1fr_1.1fr] lg:items-center">
+
+        {/* Destaque */}
+
+        <div className="rounded-[2.5rem] bg-gradient-to-br from-black via-slate-900 to-slate-950 p-10 text-white shadow-2xl">
+
+          <span className="rounded-full border border-orange-500/30 bg-orange-500/10 px-4 py-2 text-xs font-bold uppercase tracking-[0.25em] text-orange-300">
+
+            VANZASHOP
+
+          </span>
+
+          <h3 className="mt-8 text-4xl font-black leading-tight">
+
+            Sua loja presente nos maiores marketplaces do Brasil.
+
           </h3>
-          <p className="mt-4 text-base leading-8 text-blue-50">
-            Da coordenação de campanhas à saúde de estoque, transformamos a complexidade do comércio multisite em uma máquina organizada e escalável.
+
+          <p className="mt-6 leading-8 text-slate-300">
+
+            Trabalhamos com foco em oferecer produtos de qualidade,
+            atendimento responsável e uma experiência de compra segura,
+            aproveitando toda a estrutura das plataformas parceiras.
+
           </p>
-          <div className="mt-8 flex items-center gap-2 text-sm font-semibold text-blue-100">
-            Explore nosso modelo de consultoria
+
+          <a
+            href="#marketplaces"
+            className="mt-10 inline-flex items-center gap-2 rounded-xl bg-orange-500 px-7 py-4 font-semibold text-white transition hover:bg-orange-600"
+          >
+
+            Escolher Marketplace
+
             <ArrowRight className="h-4 w-4" />
-          </div>
+
+          </a>
+
         </div>
 
-        <div className="grid gap-4 sm:grid-cols-2">
+        {/* Cards */}
+
+        <div className="grid gap-6 sm:grid-cols-2">
+
           {reasons.map((reason) => {
+
             const Icon = reason.icon;
+
             return (
-              <div key={reason.title} className="rounded-[1.5rem] border border-slate-200 bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-xl">
-                <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-blue-50 text-blue-700">
-                  <Icon className="h-6 w-6" />
+
+              <div
+                key={reason.title}
+                className="group rounded-[2rem] border border-slate-200 bg-white p-8 shadow-sm transition-all duration-300 hover:-translate-y-2 hover:border-orange-200 hover:shadow-xl"
+              >
+
+                <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-orange-100 text-orange-600 transition-all group-hover:bg-orange-600 group-hover:text-white">
+
+                  <Icon className="h-7 w-7" />
+
                 </div>
-                <h4 className="mt-4 text-lg font-semibold text-slate-950">{reason.title}</h4>
-                <p className="mt-3 text-sm leading-7 text-slate-600">{reason.description}</p>
+
+                <h4 className="mt-6 text-xl font-bold text-slate-900">
+
+                  {reason.title}
+
+                </h4>
+
+                <p className="mt-4 leading-7 text-slate-600">
+
+                  {reason.description}
+
+                </p>
+
               </div>
+
             );
+
           })}
+
         </div>
+
       </div>
+
     </section>
   );
 }
